@@ -5,6 +5,8 @@ tg.expand();
 let item = "";
 
 let start = document.getElementById("start");
+let fail = document.getElementById("failButton");
+let ok = document.getElementById("okButton");
 
 start.addEventListener("click", function(){
 	if (tg.MainButton.isVisible) {
@@ -12,6 +14,26 @@ start.addEventListener("click", function(){
 	}
 	else {
 		tg.MainButton.setText("Вы нажали старт");
+		item = "1";
+		tg.MainButton.show();
+	}
+});
+fail.addEventListener("click", function(){
+	if (tg.MainButton.isVisible) {
+		tg.MainButton.hide();
+	}
+	else {
+		tg.MainButton.setText("FAIL SEND");
+		item = "1";
+		tg.MainButton.show();
+	}
+});
+ok.addEventListener("click", function(){
+	if (tg.MainButton.isVisible) {
+		tg.MainButton.hide();
+	}
+	else {
+		tg.MainButton.setText("OK SEND");
 		item = "1";
 		tg.MainButton.show();
 	}
