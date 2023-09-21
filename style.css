@@ -28,8 +28,7 @@ body {
 }
 
 .img {
-	width: 150px;
-	margin: 30px auto;
+	width: 120px;
 }
 
 .item {
@@ -37,13 +36,8 @@ body {
 }
 
 .btn {
-	border: 0;
-	border-radius: 5px;
-	margin-top: 50px;
-	height: 60px;
-	width: 200px;
-	font-size: 20px;
-	font-weight: 500;
+	border: none;
+	padding: 10px 20px;
 	cursor: pointer;
 	transition: all 500ms ease;
 	background: var(--tg-theme-button-text-color);
