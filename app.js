@@ -1,7 +1,7 @@
 let tg = window.Telegram.WebApp;
 
 tg.expand();
-tg.showAlert(`Добро пожаловать, @${WebApp.WebAppUser.username}.`);
+
 let fail = document.getElementById("failButton");
 let ok = document.getElementById("okButton");
 
