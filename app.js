@@ -9,13 +9,14 @@ let ok = document.getElementById("okButton");
 fail.addEventListener("click", function(){
 	let event = "fail";
 	tg.sendData(event)
-	tg.close;
+	//tg.close;
 });
 ok.addEventListener("click", function(){
 	let event = "ok";
 	tg.sendData(event)
-	tg.close;
+	//tg.close;
 });
+tg.initDataUnsafe
 
 
 

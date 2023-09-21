@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Page</title>
+  <style>
+    body {
+      background: #f6f6f6;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      width: 90%;
+      margin: auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1);
+    }
+    input[type="text"], select, .date-pick{
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    input[type="submit"]{
+      background: #4caf50;
+      border: none;
+      color: white;
+      text-align: center;
+      display: inline-block;
+      font-size: 16px;
+      margin: 10px 0;
+      cursor: pointer;
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h2>Input Details</h2>
+  <form action="#">
+    <label for="fname">First Name:</label><br>
+    <input type="text" id="fname" name="fname"><br>
+    <label for="lname">Last Name:</label><br>
+    <input type="text" id="lname" name="lname"><br>
+    <label for="date">Date:</label><br>
+    <input type="date" id="date" name="date" class="date-pick"><br>
+    <label for="option">Options:</label><br>
+    <select id="option" name="option">
+      <option value="option1">Option 1</option>
+      <option value="option2">Option 2</option>
+      <option value="option3">Option 3</option>
+    </select><br>
+    <input type="submit" value="Create">
+  </form>
+</div>
+</body>
+</html>
