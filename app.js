@@ -2,17 +2,17 @@ let tg = window.Telegram.WebApp;
 
 tg.expand();
 
-let fail = document.getElementById("failButton");
-let ok = document.getElementById("okButton");
+let mailing = document.getElementById("mailing");
+let fisk = document.getElementById("fisk");
 
 
-fail.addEventListener("click", function(){
-	let event = "fail";
+mailing.addEventListener("click", function(){
+	let event = "mailing";
 	tg.sendData(event)
 	tg.close;
 });
-ok.addEventListener("click", function(){
-	let event = "ok";
+fisk.addEventListener("click", function(){
+	let event = "fisk";
 	tg.sendData(event)
 	tg.close;
 });
