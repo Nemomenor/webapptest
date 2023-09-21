@@ -16,7 +16,17 @@ ok.addEventListener("click", function(){
 	tg.sendData(event)
 	//tg.close;
 });
-tg.initDataUnsafe
+let usercard = document.getElementById("usercard");
+
+let p = document.createElement("p");
+
+p.innerText = `${tg.initDataUnsafe.user.first_name}
+${tg.initDataUnsafe.user.id}
+${tg.initDataUnsafe.user.displayName}
+${tg.initDataUnsafe.user.data}
+${tg.initDataUnsafe.user.last_name}`;
+
+usercard.appendChild(p);
 
 
 
