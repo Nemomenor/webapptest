@@ -9,21 +9,19 @@ let ok = document.getElementById("okButton");
 fail.addEventListener("click", function(){
 	let event = "fail";
 	tg.sendData(event)
-	//tg.close;
+	tg.close;
 });
 ok.addEventListener("click", function(){
 	let event = "ok";
 	tg.sendData(event)
-	//tg.close;
+	tg.close;
 });
 let usercard = document.getElementById("usercard");
 
 let p = document.createElement("p");
-
 p.innerText = `${tg.initDataUnsafe.user.first_name}
 ${tg.initDataUnsafe.user.id}
 ${tg.initDataUnsafe.user.displayName}
-${tg.initDataUnsafe.user.data}
 ${tg.initDataUnsafe.user.last_name}`;
 
 usercard.appendChild(p);
