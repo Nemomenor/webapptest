@@ -21,7 +21,7 @@
     </script>
 
 </head>
-<body class="" style="visibility: hidden;>
+<body>
 <section id="static_mailing" class="second">
     <button id="fail_send">❌ FAIL</button>
     <button id="ok_send" >✅ OK</button>
@@ -52,19 +52,10 @@
         close() {
             Telegram.WebApp.close();
         },
-    }
-    const DemoAppMenu = {
-        init() {
-            DemoApp.init();
-            document.body.classList.add('gray');
-            Telegram.WebApp.setHeaderColor('secondary_bg_color');
-        }
     };
+
     document.body.setAttribute('style', '--bg-color:' + Telegram.WebApp.backgroundColor);
-    Telegram.WebApp.onEvent('themeChanged', function() {
-        bgColorInput.value = Telegram.WebApp.backgroundColor;
-        document.body.setAttribute('style', '--bg-color:' + Telegram.WebApp.backgroundColor);
-    });
+
 </script>
 </body>
 </html>
