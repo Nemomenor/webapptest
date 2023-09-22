@@ -57,5 +57,35 @@
     document.body.setAttribute('style', '--bg-color:' + Telegram.WebApp.backgroundColor);
 
 </script>
+<script type="application/javascript">
+    /*
+     * This part of code is used to initialize the demo app and set up the event handlers we need.
+     */
+
+    Telegram.WebApp.onEvent('themeChanged', function() {
+        document.getElementById('theme_data').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
+    });
+
+    if (DemoApp.initDataUnsafe.query_id) {
+        document.getElementById('main_btn').style.display = 'block';
+    }
+
+
+    DemoApp.checkInitData();
+    DemoApp.init();
+
+    function setViewportData() {
+        document.querySelector('.viewport-border')
+            .setAttribute('text', window.innerWidth + ' x ' + round(Telegram.WebApp.viewportHeight, 2))
+        document.querySelector('.viewport-stable_border')
+            .setAttribute('text', window.innerWidth + ' x ' + round(Telegram.WebApp.viewportStableHeight, 2) +
+                ' | is_expanded: ' + (Telegram.WebApp.isExpanded ? 'true' : 'false'));
+    }
+    Telegram.WebApp.setHeaderColor('secondary_bg_color');
+
+
+
+
+</script>
 </body>
 </html>
