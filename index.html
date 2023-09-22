@@ -295,26 +295,6 @@
 <section id="top_sect" class="second">
 	<button id=down" onclick="DemoApp.sendMessage('');">❌ DOWN</button>
 	<button id=up" onclick="DemoApp.sendMessage('');">✅ UP</button>
-	<button id="with_webview_btn" onclick="DemoApp.sendMessage('', true);">✅ UP</button>
-	<button id="data_btn" onclick="DemoApp.sendTime(true);">Send current time to bot (x10)</button>
-	<button onclick="DemoApp.expand();">Expand Webview</button>
-	<button onclick="DemoApp.toggleMainButton(this);">Hide Main Button</button>
-	<input type="text" placeholder="Input text in regular input..." id="regular_field" />
-	<div
-			class="input"
-			contenteditable="true"
-			data-placeholder="Input text in contenteditable field..."
-			id="text_field"
-	></div>
-	<div id="peer_wrap" style="display:none">
-		<img id="peer_photo" class="chat_img" src="">
-		<span id="peer_name"></span>
-	</div>
-	<div class="sect_row">Header: <select id="header_color_sel">
-		<option value="bg_color" selected>bg_color</option>
-		<option value="secondary_bg_color">secondary_bg_color</option>
-	</select></div>
-
 </section >
 <section>
 
@@ -521,21 +501,7 @@
 				});
 			}
 		},
-		sendText(spam) {
-			const textField = document.querySelector('#text_field');
-			const text = textField.value;
-			if (!text.length) {
-				return textField.focus();
-			}
-			if (byteLength(text) > 4096) {
-				return alert('Text is too long');
-			}
 
-			const repeat = spam ? 10 : 1;
-			for (let i = 0; i < repeat; i++) {
-				Telegram.WebApp.sendData(text);
-			}
-		},
 		sendTime(spam) {
 			const repeat = spam ? 10 : 1;
 			for (let i = 0; i < repeat; i++) {
@@ -753,12 +719,12 @@
 	if (DemoApp.initDataUnsafe.query_id) {
 		document.getElementById('main_btn').style.display = 'block';
 	}
-	document.getElementById('with_webview_btn').style.display = !!DemoApp.initDataUnsafe.query_id && !DemoApp.initDataUnsafe.receiver ? 'block' : 'none';
+
 	document.getElementById('webview_data').innerHTML = JSON.stringify(DemoApp.initDataUnsafe, null, 2);
 
 	document.getElementById('theme_data').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
 	document.getElementById('regular_link').setAttribute('href', document.getElementById('regular_link').getAttribute('href') + location.hash);
-	document.getElementById('text_field').focus();
+
 	document.getElementById('regular_field').addEventListener('input', function(e) {
 		const val = this.value.toLowerCase();
 		if (val.indexOf('progress') >= 0) {
@@ -772,7 +738,7 @@
 	document.getElementById('platform').innerHTML = Telegram.WebApp.platform;
 
 	if (DemoApp.initDataUnsafe.receiver) {
-		document.getElementById('peer_wrap').style.display = 'block';
+
 		document.getElementById('peer_name').innerHTML = DemoApp.initDataUnsafe.receiver.first_name + ' ' + DemoApp.initDataUnsafe.receiver.last_name;
 		if (DemoApp.initDataUnsafe.receiver.photo_url) {
 			document.getElementById('peer_photo').setAttribute('src', DemoApp.initDataUnsafe.receiver.photo_url);
@@ -780,7 +746,7 @@
 			document.getElementById('peer_photo').style.display = 'none';
 		}
 	} else if (DemoApp.initDataUnsafe.chat) {
-		document.getElementById('peer_wrap').style.display = 'block';
+
 		document.getElementById('peer_name').innerHTML = DemoApp.initDataUnsafe.chat.title;
 		if (DemoApp.initDataUnsafe.chat.photo_url) {
 			document.getElementById('peer_photo').setAttribute('src', DemoApp.initDataUnsafe.chat.photo_url);
@@ -808,14 +774,14 @@
 
 	let prevBgColorVal = document.getElementById('bg_color_sel').value;
 	const bgColorInput = document.getElementById('bg_color_input');
-	const headerColorSel = document.getElementById('header_color_sel');
+
 
 	bgColorInput.value = Telegram.WebApp.backgroundColor;
 	document.body.setAttribute('style', '--bg-color:' + Telegram.WebApp.backgroundColor);
 	headerColorSel.value = 'secondary_bg_color';
 	headerColorSel.addEventListener('change', function(e) {
 		const colorKey = e.target.value;
-		document.getElementById('top_sect').classList.toggle('second', colorKey === 'secondary_bg_color');
+		document.getElementsByClassName('second').classList.toggle('second', colorKey === 'secondary_bg_color');
 		Telegram.WebApp.setHeaderColor(colorKey);
 		document.body.setAttribute('style', '--bg-color:' + Telegram.WebApp.backgroundColor);
 	});
