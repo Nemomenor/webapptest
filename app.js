@@ -1,7 +1,7 @@
 let tg = window.Telegram.WebApp;
 
 tg.expand();
-tg.ready();
+
 let fail_send = document.getElementById("fail_send");
 let ok_send = document.getElementById("ok_send");
 
