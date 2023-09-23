@@ -11,6 +11,7 @@ tg.MainButton.setParams({
 	is_visible: true
 });
 Telegram.WebApp.onEvent('mainButtonClicked', tg.close());
+
 fail_send.addEventListener("click", function(){
 	result = Telegram.WebApp.showConfirm("Отправить ❌ FAIL?",true);
 	textarea.setText(result)
