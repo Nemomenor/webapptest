@@ -5,8 +5,8 @@ tg.expand();
 let fail_send = document.getElementById("fail_send");
 let ok_send = document.getElementById("ok_send");
 let custom_send = document.getElementById("custom_send");
-let ticker = document.getElementById("tickers").value;
-let textarea = document.getElementById("textarea").value;
+let ticker = document.getElementById("tickers").value();
+let textarea = document.getElementById("textarea").value();
 
 tg.MainButton.show();
 tg.MainButton.setParams({
