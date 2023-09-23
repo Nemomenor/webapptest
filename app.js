@@ -9,7 +9,8 @@ tg.MainButton.show();
 tg.MainButton.setParams({
 	text: 'CLOSE WEBVIEW',
 	is_visible: true
-}).onclick(tg.close())
+});
+Telegram.WebApp.onEvent('mainButtonClicked', tg.close());
 fail_send.addEventListener("click", function(){
 	result = Telegram.WebApp.showConfirm("Отправить ❌ FAIL?",true);
 	textarea.setText(result)
