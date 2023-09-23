@@ -6,10 +6,10 @@ let fail_send = document.getElementById("fail_send");
 let ok_send = document.getElementById("ok_send");
 
 tg.MainButton.show();
-Telegram.WebApp.MainButton.setParams({
+tg.MainButton.setParams({
     text: 'CLOSE fuack',
     is_visible: true
-}).onClick(Telegram.WebApp.close());
+}).onClick(tg.close());
 
 fail_send.addEventListener("click", function () {
     let result = confirm("отправить FAIL");
