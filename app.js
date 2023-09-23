@@ -7,7 +7,7 @@ let ok_send = document.getElementById("ok_send");
 
 tg.MainButton.show();
 tg.MainButton.setParams({
-    text: 'CLOSE fuack',
+    text: 'CLOSE',
     is_visible: true
 });
 Telegram.WebApp.onEvent('mainButtonClicked', function(){
