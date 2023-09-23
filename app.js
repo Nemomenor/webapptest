@@ -9,7 +9,7 @@ tg.MainButton.show();
 tg.MainButton.setParams({
     text: 'CLOSE fuack',
     is_visible: true
-}).onClick(tg.close());
+});
 
 fail_send.addEventListener("click", function () {
     let result = confirm("отправить FAIL");
