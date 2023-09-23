@@ -155,6 +155,7 @@ li {
 }
 textarea {
 	width: 100%;
+	height: 100px;
 	box-sizing: border-box;
 	padding: 7px;
 }
