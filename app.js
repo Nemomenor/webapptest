@@ -6,7 +6,7 @@ let fail_send = document.getElementById("fail_send");
 let ok_send = document.getElementById("ok_send");
 
 tg.MainButton.show();
-tg.MainButton.setParameters({text: "main button"});
+tg.MainButton.setParams{text: "main button"});
 
 fail_send.addEventListener("click", function(){
 	let result = Telegram.WebApp.showConfirm("Отправить ❌ FAIL?");
