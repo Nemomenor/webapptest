@@ -34,8 +34,8 @@ ok_send.addEventListener("click", function () {
     }
 });
 custom_send.addEventListener("click", function () {
-    let event = "ok_send";
-        tg.sendData(event+" $ "+ticker+" $ "+ textarea.get);
+    let event = "custom_send";
+        tg.sendData(event+" $ "+ticker+" $ "+ textarea);
         tg.close();
 
 });
