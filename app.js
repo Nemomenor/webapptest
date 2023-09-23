@@ -6,7 +6,7 @@ let fail_send = document.getElementById("fail_send");
 let ok_send = document.getElementById("ok_send");
 let textarea = document.getElementById("textarea");
 
-tg.MainButton.setParameters({
+tg.MainButton.setParams({
 	text: 'CLOSE WEBVIEW',
 	is_visible: true
 }).onclick(tg.close())
