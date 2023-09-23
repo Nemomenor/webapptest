@@ -10,8 +10,10 @@ tg.MainButton.setParams({
     text: 'CLOSE fuack',
     is_visible: true
 });
-tg.onEvent('mainButtonClicked', tg.close())
-
+Telegram.WebApp.onEvent('mainButtonClicked', function(){
+    tg.close();
+    //при клике на основную кнопку отправляем данные в строковом виде
+});
 fail_send.addEventListener("click", function () {
     let result = confirm("отправить FAIL");
     if (result){
