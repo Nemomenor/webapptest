@@ -14,10 +14,13 @@ fail_send.addEventListener("click", function(){
 		tg.close();
 });
 ok_send.addEventListener("click", function(){
+let result = Telegram.WebApp.showConfirm("отправить ок ?");
+if (result === true){
+	let event = "ok_send";
+	tg.sendData(event);
+	tg.close();
+}
 
-		let event = "ok_send";
-		tg.sendData(event);
-		tg.close();
 
 
 });
