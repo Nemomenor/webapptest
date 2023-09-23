@@ -12,13 +12,7 @@
     <link rel="stylesheet" href="style.css">
     <title>iBox</title>
     <script src="https://telegram.org/js/telegram-web-app.js?1"></script>
-    <script>
-        function setThemeClass() {
-            document.documentElement.className = Telegram.WebApp.colorScheme;
-        }
-        Telegram.WebApp.onEvent('themeChanged', setThemeClass);
-        setThemeClass();
-    </script>
+
 
 </head>
 <body>
@@ -32,60 +26,7 @@
 <section id="custom_mailing" class="second">
     <button id="custom_send">SEND CUSTOM</button>
 </section>
-<script type="application/javascript">
-    const DemoApp = {
-        initData: Telegram.WebApp.initData || '',
-        initDataUnsafe: Telegram.WebApp.initDataUnsafe || {},
-        MainButton: Telegram.WebApp.MainButton,
 
-        init(options) {
-            document.body.style.visibility = '';
-            Telegram.WebApp.ready();
-            Telegram.WebApp.MainButton.setParams({
-                text: 'CLOSE WEBVIEW',
-                is_visible: true
-            }).onClick(DemoApp.close);
-        },
-        expand() {
-            Telegram.WebApp.expand();
-        },
-        close() {
-            Telegram.WebApp.close();
-        },
-    };
-
-    document.body.setAttribute('style', '--bg-color:' + Telegram.WebApp.backgroundColor);
-
-</script>
-<script type="application/javascript">
-    /*
-     * This part of code is used to initialize the demo app and set up the event handlers we need.
-     */
-
-    Telegram.WebApp.onEvent('themeChanged', function() {
-        document.getElementById('theme_data').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
-    });
-
-    if (DemoApp.initDataUnsafe.query_id) {
-        document.getElementById('main_btn').style.display = 'block';
-    }
-
-
-    DemoApp.checkInitData();
-    DemoApp.init();
-
-    function setViewportData() {
-        document.querySelector('.viewport-border')
-            .setAttribute('text', window.innerWidth + ' x ' + round(Telegram.WebApp.viewportHeight, 2))
-        document.querySelector('.viewport-stable_border')
-            .setAttribute('text', window.innerWidth + ' x ' + round(Telegram.WebApp.viewportStableHeight, 2) +
-                ' | is_expanded: ' + (Telegram.WebApp.isExpanded ? 'true' : 'false'));
-    }
-    Telegram.WebApp.setHeaderColor('secondary_bg_color');
-
-
-
-
-</script>
+<script src="app.js"></script>
 </body>
 </html>

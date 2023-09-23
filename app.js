@@ -2,28 +2,29 @@ let tg = window.Telegram.WebApp;
 
 tg.expand();
 
-let mailing = document.getElementById("mailing");
-let fisk = document.getElementById("fisk");
+let fail_send = document.getElementById("fail_send");
+let ok_send = document.getElementById("ok_send");
 
 
-mailing.addEventListener("click", function(){
-	let event = "mailing";
-	tg.sendData(event)
-	tg.close;
+fail_send.addEventListener("click", function(){
+	result = Telegram.WebApp.showConfirm("Отправить FAIL?");
+	if (result){
+		let event = "fail_send";
+		tg.sendData(event)
+		tg.close;
+	}
+
 });
-fisk.addEventListener("click", function(){
-	let event = "fisk";
-	tg.sendData(event)
-	tg.close;
+ok_send.addEventListener("click", function(){
+	result = Telegram.WebApp.showConfirm("Отправить OK?");
+	if (result){
+		let event = "ok_send";
+		tg.sendData(event)
+		tg.close;
+	}
+
 });
-let usercard = document.getElementById("usercard");
 
-let p = document.createElement("p");
-p.innerText = `${tg.initDataUnsafe.user.first_name}
-${tg.initDataUnsafe.user.id}
-${tg.initDataUnsafe.user.last_name}`;
-
-usercard.appendChild(p);
 
 
 
