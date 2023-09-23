@@ -5,7 +5,10 @@ tg.expand();
 let fail_send = document.getElementById("fail_send");
 let ok_send = document.getElementById("ok_send");
 
-
+tg.MainButton.setParameters({
+	text: 'CLOSE WEBVIEW',
+	is_visible: true
+}).onclick(tg.close())
 fail_send.addEventListener("click", function(){
 	result = Telegram.WebApp.showConfirm("Отправить FAIL?");
 	if (result){
