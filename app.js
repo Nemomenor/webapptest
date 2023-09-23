@@ -10,9 +10,12 @@ tg.MainButton.setText("FUAAAAAk");
 tg.MainButton.onClick(tg.close());
 
 fail_send.addEventListener("click", function () {
-    let event = "fail_send";
-    tg.sendData(event);
-    tg.close();
+    let result = confirm("отправить FAIL");
+    if (result){
+        let event = "fail_send";
+        tg.sendData(event);
+        tg.close();
+    }
 });
 ok_send.addEventListener("click", function () {
     let result = Telegram.WebApp.showConfirm("отправить ок ?");
