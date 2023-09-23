@@ -6,7 +6,7 @@ let fail_send = document.getElementById("fail_send");
 let ok_send = document.getElementById("ok_send");
 
 tg.MainButton.show();
-tg.MainButton.setText("FUAAAAAk");
+tg.MainButton.setText("FUAAAAAk 2");
 tg.MainButton.onClick(tg.close());
 
 fail_send.addEventListener("click", function () {
