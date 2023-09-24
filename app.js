@@ -30,7 +30,7 @@ custom_send.addEventListener("click", function () {
     let ticker = tickers.options[tickers.selectedIndex].text;
     if (result) {
         let event = "custom_send";
-        tg.sendData(event + " $ " + ticker + " $ " + textarea);
+        tg.sendData(event + "-split-" + ticker + "-split-" + textarea);
         tg.close();
     }
 
