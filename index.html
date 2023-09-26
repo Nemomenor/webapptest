@@ -15,15 +15,12 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
-
-<section id="static_mailing" class="second">
-    <button id="fail_send">❌ FAIL</button>
-    <button id="ok_send" >✅ OK</button>
-</section>
 <div>
-
+    <button class="button" id="fail_send">❌ FAIL</button>
+    <button class="button" id="ok_send">✅ OK</button>
 </div>
-<section id="custom_mailing" class="second">
+
+
     <select id="tickers">
         <option disabled>Выберите тикер</option>
         <option value="ALL">ALL</option>
@@ -34,11 +31,11 @@
         <option value="TEST">TEST</option>
         <option value="SERVERFISC">SERVERFISC</option>
     </select>
-    <label>
+<br/>
         <textarea id ="textarea"></textarea>
-    </label>
-    <button id="custom_send">SEND CUSTOM</button>
-</section>
+<br/>
+    <button class="button" id="custom_send">SEND CUSTOM</button>
+
 
 <script src="app.js"></script>
 </body>
