@@ -37,6 +37,7 @@ body {
 textarea {
 	width: 300px;
 	height: 150px;
+	background-color: var(--tg-theme-bg-color, #0088cc);
 }
 .container{
 	max-width: 600px;
