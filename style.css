@@ -6,11 +6,11 @@ body {
 	font-size: 14px;
 	margin: 0;
 	padding: 0;
-	color-scheme: var(--tg-color-scheme);
 }
 .button {
 	background-color:var( --tg-theme-button-text-color, #50a8eb) ;
 	box-sizing: border-box;
+	color: var(--tg-theme-button-text-color);
 	width: 100%;
 	padding: 12px 20px;
 	margin: 15px 0;
@@ -46,7 +46,6 @@ textarea {
 	color: var(--tg-theme-text-color, #222222);
 	text-align: center;
 	display: block;
-	height: 50px;
 	font-size: 16px;
 }
 .container{
