@@ -31,7 +31,7 @@
             margin: 15px 0;
             border: 1px solid var(--tg-theme-link-color, #000);
             background-color: var(--tg-theme-bg-color, #ffffff);
-            border-radius: 4px;
+
             color: var(--tg-theme-text-color, #222222);
             text-align: center;
             display: block;
@@ -54,6 +54,20 @@
 
         button:hover {
             background-color: #005580;
+        }
+        @keyframes showBlock {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        @media screen and (max-width: 480px) {
+            #options,#options1,#options2,#options3,#options4 {
+                width: 100%;
+            }
+
         }
     </style>
 </head>
