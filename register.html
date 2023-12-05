@@ -15,29 +15,41 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
         body {
+            --bg-color: var(--tg-theme-secondary-bg-color, #fff);
             font-family: Arial, sans-serif;
-            background-color: #eff2f5;
-            padding: 20px;
+            background-color: var(--bg-color);
+            color: var( --tg-theme-bg-color, #efefef);
+            font-size: 14px;
+            margin: 0;
+            padding: 0;
         }
 
         .dropdown {
-            position: relative;
-            display: inline-block;
+            box-sizing: border-box;
+            width: 100%;
+            padding: 12px 20px;
+            margin: 15px 0;
+            border: 1px solid var(--tg-theme-link-color, #000);
+            background-color: var(--tg-theme-bg-color, #ffffff);
+            border-radius: 4px;
+            color: var(--tg-theme-text-color, #222222);
+            text-align: center;
+            display: block;
+            height: 50px;
+            font-size: 16px;
         }
 
         button {
-            background-color: #0088cc;
-            color: #ffffff;
-            padding: 10px 20px;
-            text-align: center;
-            text-decoration: none;
             display: block;
             width: 100%;
-            font-size: 16px;
-            margin: 10px 0;
-            cursor: pointer;
+            font-size: 14px;
+            margin: 15px 0;
+            padding: 12px 20px;
             border: none;
-            border-radius: 5px;
+            border-radius: 4px;
+            background-color: var(--tg-theme-button-color, #50a8eb);
+            color: var(--tg-theme-button-text-color, #ffffff);
+            cursor: pointer;
         }
 
         button:hover {
