@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="MobileOptimized" content="176" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="robots" content="noindex,nofollow" />
+    <link rel="stylesheet" href="style.css">
+    <title>registor events</title>
+    <!-- CSS -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eff2f5;
+            padding: 20px;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        button {
+            background-color: #0088cc;
+            color: #ffffff;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            font-size: 16px;
+            margin: 10px 0;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #005580;
+        }
+    </style>
+</head>
+<body>
+
+<div class="dropdown">
+    <select id="options" onchange="showButtons()">
+        <option value="">Выбери тип</option>
+        <option value="option1">Активация</option>
+        <option value="option2">Отправлено заявлений</option>
+        <option value="option3">Отправлено на регистрацию в банк</option>
+        <option value="option4">Другое</option>
+    </select>
+    <div id="option1" style="display: none;">
+        <button onclick="displayButtonName('Активация напрямую от банка МТС')">Активация напрямую от банка МТС</button>
+        <button onclick="displayButtonName('Активация напрямую от банка ПСБ')">Активация напрямую от банка ПСБ</button>
+        <button onclick="displayButtonName('Активация напрямую от банка УБРИР')">Активация напрямую от банка УБРИР</button>
+        <button onclick="displayButtonName('Активация напрямую от банка Совкомбанк')">Активация напрямую от банка Совкомбанк</button>
+        <button onclick="displayButtonName('Активация напрямую от банка ПСКБ')">Активация напрямую от банка ПСКБ</button>
+        <button onclick="displayButtonName('Активация напрямую от банка Модульбанк')">Активация напрямую от банка Модульбанк</button>
+        <button onclick="displayButtonName('Активация МЭ (наша)')">Активация МЭ (наша)</button>
+        <button onclick="displayButtonName('Активация ИЭ (наша)')">Активация ИЭ (наша)</button>
+        <button onclick="displayButtonName('Активация ЮMoney')">Активация ЮMoney</button>
+        <button onclick="displayButtonName('Активация доп. тид')">Активация доп. тид</button>
+    </div>
+    <div id="option2" style="display: none;">
+        <button onclick="displayButtonName('Отправлено заявлений ВТБ')">Отправлено заявлений ВТБ</button>
+        <button onclick="displayButtonName('Отправлено заявлений МТС')">Отправлено заявлений МТС</button>
+        <button onclick="displayButtonName('Отправлено заявлений ПСБ')">Отправлено заявлений ПСБ</button>
+        <button onclick="displayButtonName('Отправлено заявлений ИЭ ВТБ')">Отправлено заявлений ИЭ ВТБ</button>
+        <button onclick="displayButtonName('Отправлено заявлений ИЭ ПСБ')">Отправлено заявлений ИЭ ПСБ</button>
+        <button onclick="displayButtonName('Отправлено заявлений ИЭ СДМ')">Отправлено заявлений ИЭ СДМ</button>
+        <button onclick="displayButtonName('Отправлено заявлений доп. тид')">Отправлено заявлений доп. тид</button>
+    </div>
+    <div id="option3" style="display: none;">
+        <button onclick="displayButtonName('Отправлено на регистрацию в банк МТС')">Отправлено на регистрацию в банк МТС</button>
+        <button onclick="displayButtonName('Отправлено на регистрацию в банк ПСБ')">Отправлено на регистрацию в банк ПСБ</button>
+        <button onclick="displayButtonName('Отправлено на регистрацию в банк ВТБ')">Отправлено на регистрацию в банк ВТБ</button>
+        <button onclick="displayButtonName('Отправлено на регистрацию в банк ПСБ (ИЭ)')">Отправлено на регистрацию в банк ПСБ (ИЭ)</button>
+        <button onclick="displayButtonName('Отправлено на регистрацию в банк СДМ (ИЭ)')">Отправлено на регистрацию в банк СДМ (ИЭ)</button>
+        <button onclick="displayButtonName('Отправлен на регистрацию доп TID')">Отправлен на регистрацию доп TID</button>
+        <button onclick="displayButtonName('Отправлено на регистрацию в банк ВТБ (ИЭ)')">Отправлено на регистрацию в банк ВТБ (ИЭ)</button>
+    </div>
+    <div id="option4" style="display: none;">
+        <button onclick="displayButtonName('Отработка тикетов 2linebank')">Отработка тикетов 2linebank</button>
+        <button onclick="displayButtonName('Отработка тикетов Аренда кассы ПСБ')">Отработка тикетов "Аренда кассы ПСБ"</button>
+        <button onclick="displayButtonName('Отправлен на доработку')">Отправлен на доработку</button>
+        <button onclick="displayButtonName('Сделано отчетов')">Сделано отчетов</button>
+
+    </div>
+</div>
+
+<script>
+    function showButtons() {
+        var selectedOption = document.getElementById("options").value;
+        var option1 = document.getElementById("option1");
+        var option2 = document.getElementById("option2");
+        var option3 = document.getElementById("option3");
+        var option4 = document.getElementById("option4");
+
+        if (selectedOption === "option1") {
+            option1.style.display = "block";
+            option2.style.display = "none";
+            option3.style.display = "none";
+            option4.style.display = "none";
+        } else if (selectedOption === "option2") {
+            option1.style.display = "none";
+            option2.style.display = "block";
+            option3.style.display = "none";
+            option4.style.display = "none";
+        } else if (selectedOption === "option3") {
+            option1.style.display = "none";
+            option2.style.display = "none";
+            option3.style.display = "block";
+            option4.style.display = "none";
+        } else if (selectedOption === "option4") {
+            option1.style.display = "none";
+            option2.style.display = "none";
+            option3.style.display = "none";
+            option4.style.display = "block";
+        } else {
+            option1.style.display = "none";
+            option2.style.display = "none";
+        }
+    }
+    let tg = window.Telegram.WebApp;
+    function displayButtonName(name) {
+            tg.sendData("work_reg"+name);
+            tg.close();
+    }
+</script>
+
+
+</body>
+</html>
